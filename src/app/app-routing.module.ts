@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'request-confirmed',
+    loadChildren: () => import('./request-confirmed/request-confirmed.module').then( m => m.RequestConfirmedPageModule)
+  },
 ];
 
 @NgModule({

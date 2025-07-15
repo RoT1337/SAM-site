@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>
+      <ion-icon name="checkmark-circle-outline" style="vertical-align: middle; margin-right: 8px;"></ion-icon>
+      Request Confirmed
+    </ion-title>
+    <div class="subtitle">QR Code Generated</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="qr-card">
+    <div class="qr-placeholder">
+      <!-- Placeholder for QR code -->
+      <ion-icon name="qr-code-outline" style="font-size: 80px; color: #bdbdbd;"></ion-icon>
+    </div>
+    <div class="qr-title">Your Relief QR Code</div>
+    <div class="qr-id">Request ID: AYU-549602</div>
+  </div>
+
+  <ion-card class="summary-card">
+    <ion-card-header>
+      <ion-card-title class="summary-title">Request Summary</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="selected-items-label">Selected Items:</div>
+      <div class="selected-tags">
+        <span class="selected-tag">Medical Kit</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="distribution-card">
+    <ion-card-header>
+      <ion-card-title class="distribution-title">Distribution Details</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="distribution-details">
+        <div>
+          <b>Location:</b> Barangay San Roque, Quezon City
+        </div>
+        <div>
+          <b>Date & Time:</b> January 16, 2024 • 10:00 AM - 4:00 PM
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="next-steps-card">
+    <div class="next-steps-title">
+      <ion-icon name="information-circle-outline" style="vertical-align: middle; margin-right: 6px;"></ion-icon>
+      Next Steps:
+    </div>
+    <ul>
+      <li>Save this QR code to your phone</li>
+      <li>Show it at the distribution center for verification</li>
+      <li>Bring a valid ID for additional verification</li>
+    </ul>
+  </div>
+
+  <ion-button expand="block" fill="outline" color="medium" class="track-btn">
+    <ion-icon name="search-outline" slot="start"></ion-icon>
+    Track My Request Status
+  </ion-button>
+  <ion-button expand="block" color="primary" class="another-btn">
+    Make Another Request
+  </ion-button>
+  <div class="help-text">
+    Need immediate assistance? Call 911
+  </div>
+</ion-content>

@@ -1,20 +1,80 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      <ion-icon name="heart-circle"></ion-icon>
+      BayanihanAid
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card class="status-card">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="checkmark-circle-outline"></ion-icon>
+        Relief distribution is now active for <b>Barangay Basak Pardo</b><br/>
+      </ion-card-title>
+      <ion-card-subtitle>
+        <ion-icon name="calendar-outline"></ion-icon>
+        January 16, 2024 • 10:00 AM - 4:00 PM
+      </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-card class="quick-relief-card">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="flash-outline"></ion-icon>
+        Quick Relief Request
+      </ion-card-title>
+      <ion-card-subtitle>
+        Select the items your household needs most. You'll receive a QR code for pickup verification.
+      </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <form [formGroup]="reliefForm">
+    <div class="section-title">Select what you need:</div>
+    <div class="item-list">
+      <ion-button
+        *ngFor="let item of reliefItems"
+        [color]="isSelected(item) ? 'primary' : item.outOfStock ? 'medium' : 'light'"
+        [disabled]="item.outOfStock"
+        [expand]="'block'"
+        [fill]="'clear'"
+        [class.selected]="isSelected(item)"
+        [class.out-of-stock]="item.outOfStock"
+        (click)="toggleItem(item)"
+        class="item-btn"
+      >
+        <ion-icon [name]="item.icon" slot="start"></ion-icon>
+        <div class="item-btn-content">
+          <span class="item-title">{{item.name}}</span>
+          <span class="item-desc">{{item.desc}}</span>
+        </div>
+        <span *ngIf="item.outOfStock" class="out-stock-label">Out of Stock</span>
+        <ion-icon *ngIf="isSelected(item)" name="checkmark-outline" slot="end" class="check-icon"></ion-icon>
+      </ion-button>
+    </div>
+    <div class="selected-items-box" *ngIf="selectedItems.length">
+      <div class="selected-title">Selected Items ({{selectedItems.length}})</div>
+      <div class="selected-tags">
+        <span *ngFor="let item of selectedItems" class="selected-tag">{{item.name}}</span>
+      </div>
+    </div>
+
+    <ion-button expand="block" color="primary" [disabled]="!selectedItems.length" (click)="generateQR()" class="qr-btn">
+      <ion-icon name="qr-code-outline" slot="start"></ion-icon>
+      Generate Relief QR Code ({{selectedItems.length}} items)
+    </ion-button>
+  </form>
+
+  <div class="divider"></div>
+  <div class="already-requested">
+    <span>Already have a request?</span>
   </div>
+  <ion-button expand="block" fill="outline" color="medium" class="track-btn">
+    <ion-icon name="search-outline" slot="start"></ion-icon>
+    Track My Request
+  </ion-button>
 </ion-content>
