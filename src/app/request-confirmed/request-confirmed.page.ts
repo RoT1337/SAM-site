@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-request-confirmed',
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestConfirmedPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToTrackRequest() {
+    this.router.navigate(['/track-relief-request']);
+  }
+
+  goBackToHome() {
+    this.router.navigate(['/home']);
   }
 
 }

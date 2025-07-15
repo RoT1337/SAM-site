@@ -1,0 +1,142 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="padding-top: 25px;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Relief Status
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Current Status Card -->
+  <ion-card class="status-ready-card">
+    <div class="status-icon">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </div>
+    <div class="status-title">Your relief goods are ready!</div>
+    <div class="status-desc">Visit the distribution center with your QR code</div>
+    <span class="status-badge ready">READY</span>
+  </ion-card>
+
+  <!-- Ready for Pickup Alert -->
+  <div class="pickup-alert-card">
+    <ion-icon name="checkmark-outline"></ion-icon>
+    <span class="pickup-title">Ready for pickup!</span>
+    <span class="pickup-desc">
+      Your relief goods are packed and ready. Visit the distribution center with your QR code and valid ID.
+    </span>
+  </div>
+
+  <!-- Verification QR Code -->
+  <ion-card class="qr-verify-card">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="qr-code-outline" style="vertical-align: middle; margin-right: 6px;"></ion-icon>
+        Verification QR Code
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="qr-desc">Show this to staff at the distribution center</div>
+      <div class="qr-placeholder">
+        <ion-icon name="qr-code-outline" style="font-size: 64px; color: #bdbdbd;"></ion-icon>
+      </div>
+      <div class="qr-id">AYU-240116-VERIFIED</div>
+      <div class="qr-note">Screenshot or save this QR code</div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Relief Items Requested -->
+  <ion-card class="items-requested-card">
+    <ion-card-header>
+      <ion-card-title>Relief Items Requested:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="requested-tags">
+        <span class="requested-tag">Food Pack</span>
+        <span class="requested-tag">Clean Water</span>
+        <span class="requested-tag">Medical Kit</span>
+      </div>
+      <div class="location-row">
+        <ion-icon name="location-outline"></ion-icon>
+        Barangay San Roque, Quezon City
+      </div>
+      <div class="date-row">
+        <ion-icon name="calendar-outline"></ion-icon>
+        January 16, 2024 • 10:00 AM - 4:00 PM
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Status Timeline -->
+  <ion-card class="timeline-card">
+    <ion-card-header>
+      <ion-card-title>Status Timeline</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="timeline-step completed">
+        <div class="timeline-icon"><ion-icon name="checkmark-circle-outline"></ion-icon></div>
+        <div>
+          <div class="timeline-title">Request Submitted</div>
+          <div class="timeline-desc">Relief request received and validated</div>
+          <div class="timeline-date">1/16/2024, 5:15:00 PM</div>
+        </div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-step completed">
+        <div class="timeline-icon"><ion-icon name="checkmark-circle-outline"></ion-icon></div>
+        <div>
+          <div class="timeline-title">Processing</div>
+          <div class="timeline-desc">Relief goods being prepared and packed</div>
+          <div class="timeline-date">1/16/2024, 7:00:00 PM</div>
+        </div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-step current">
+        <div class="timeline-icon"><ion-icon name="checkmark-circle-outline"></ion-icon></div>
+        <div>
+          <div class="timeline-title">Ready for Pickup <span class="current-badge">Current</span></div>
+          <div class="timeline-desc">Relief goods packed and ready for distribution</div>
+          <div class="timeline-date">1/16/2024, 9:00:00 PM</div>
+        </div>
+      </div>
+      <div class="timeline-line"></div>
+      <div class="timeline-step">
+        <div class="timeline-icon"><ion-icon name="ellipse-outline"></ion-icon></div>
+        <div>
+          <div class="timeline-title">Claimed</div>
+          <div class="timeline-desc">Relief goods successfully received</div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Distribution Center Info -->
+  <ion-card class="distribution-info-card">
+    <ion-card-header>
+      <ion-card-title>Distribution Center</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="location-row">
+        <ion-icon name="location-outline"></ion-icon>
+        Barangay San Roque, Quezon City
+      </div>
+      <div class="date-row">
+        <ion-icon name="calendar-outline"></ion-icon>
+        January 16, 2024 • 10:00 AM - 4:00 PM
+      </div>
+      <div class="requirements-card">
+        <div class="requirements-title">
+          <ion-icon name="alert-outline" style="vertical-align: middle; margin-right: 6px;"></ion-icon>
+          Requirements for pickup:
+        </div>
+        <ul>
+          <li>Present this <b>QR code</b></li>
+          <li>Valid ID for verification</li>
+        </ul>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <div style="padding-bottom: 50px"></div>
+</ion-content>

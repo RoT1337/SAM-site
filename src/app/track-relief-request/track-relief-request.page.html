@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary" style="padding-top: 25px;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Track Relief Request
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="find-request-card">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="search-outline" style="vertical-align: middle; margin-right: 6px;"></ion-icon>
+        Find Your Request
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="desc">Enter your request ID to check if your relief goods are ready</div>
+      <div class="search-row">
+        <ion-input
+          placeholder="Enter request ID (e.g., AYU-240116)"
+          [(ngModel)]="requestId"
+          class="request-input"
+        ></ion-input>
+        <ion-button color="primary" (click)="trackRequest()" class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <div class="no-id">Don't have your request ID?</div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="status-guide-card">
+    <ion-card-header>
+      <ion-card-title>Request Status Guide</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="status-row">
+        <span class="status-badge processing">PROCESSING</span>
+        Relief goods being prepared
+      </div>
+      <div class="status-row">
+        <span class="status-badge ready">READY</span>
+        Ready for pickup at distribution center
+      </div>
+      <div class="status-row">
+        <span class="status-badge claimed">CLAIMED</span>
+        Successfully received
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="help-card">
+    <ion-card-header>
+      <ion-card-title>Need Help?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="help-title">Lost your request ID?</div>
+      <ul class="help-list">
+        <li>Check your phone for the screenshot</li>
+        <li>Ask family members who made the request</li>
+        <li>Visit the distribution center with valid ID</li>
+      </ul>
+      <hr />
+      <div class="emergency-title">Emergency Contacts</div>
+      <div class="emergency-list">
+        <div><b>Emergency:</b> 911</div>
+        <div style="color:#d32f2f;"><b>NDRRMC:</b> (+63 2) 8911-1406</div>
+        <div><b>Text RELIEF to 2929</b></div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <div style="padding-bottom: 50px"></div>
+</ion-content>

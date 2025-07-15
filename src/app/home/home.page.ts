@@ -21,7 +21,7 @@ export class HomePage {
     { name: 'Food Pack', desc: 'Rice, canned goods, noodles', icon: 'fast-food-outline' },
     { name: 'Clean Water', desc: 'Drinking water, water containers', icon: 'water-outline' },
     { name: 'Shelter Kit', desc: 'Tarpaulin, rope, basic tools', icon: 'home-outline' },
-    { name: 'Clothing', desc: 'Shirts, pants, blankets', icon: 'shirt-outline', outOfStock: true },
+    { name: 'Clothing', desc: 'Shirts, pants, blankets', icon: 'shirt-outline' },
     { name: 'Medical Kit', desc: 'First aid, basic medicines', icon: 'medkit-outline' },
     { name: 'Baby Supplies', desc: 'Formula, diapers, baby food', icon: 'baby-outline' },
   ];

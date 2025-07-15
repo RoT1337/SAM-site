@@ -1,10 +1,9 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="success">
+  <ion-toolbar color="success" style="padding-top: 25px;">
     <ion-title>
       <ion-icon name="checkmark-circle-outline" style="vertical-align: middle; margin-right: 8px;"></ion-icon>
       Request Confirmed
     </ion-title>
-    <div class="subtitle">QR Code Generated</div>
   </ion-toolbar>
 </ion-header>
 
@@ -37,10 +36,10 @@
     <ion-card-content>
       <div class="distribution-details">
         <div>
-          <b>Location:</b> Barangay San Roque, Quezon City
+          <b>Location:</b> Barangay Basak Pardo
         </div>
         <div>
-          <b>Date & Time:</b> January 16, 2024 • 10:00 AM - 4:00 PM
+          <b>Date & Time:</b> July 16, 2025 • 2:00 PM - 5:00 PM
         </div>
       </div>
     </ion-card-content>
@@ -58,14 +57,15 @@
     </ul>
   </div>
 
-  <ion-button expand="block" fill="outline" color="medium" class="track-btn">
+  <ion-button expand="block" fill="outline" color="medium" class="track-btn" (click)="goToTrackRequest()">
     <ion-icon name="search-outline" slot="start"></ion-icon>
     Track My Request Status
   </ion-button>
-  <ion-button expand="block" color="primary" class="another-btn">
+  <ion-button expand="block" color="primary" class="another-btn" (click)="goBackToHome()">
     Make Another Request
   </ion-button>
   <div class="help-text">
     Need immediate assistance? Call 911
   </div>
+  <div style="padding-bottom: 50px"></div>
 </ion-content>
